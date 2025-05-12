@@ -19,5 +19,5 @@ def conv2d(X, W, p=(0,0), s=(1,1)):
 X = [[1,3,2,4], [5,6,1,3], [1,2,0,2], [3,4,3,2]]
 W = [[1, 0, 3], [1, 2, 1], [0, 1, 1]]
 
-print('Conv2d Impolementation: ' + conv2d(X, W, p=(1,1), s=(1,1)))
-print('SciPy Results: ' + scipy.signal.convolve2d(X, W, mode='same'))
+print(f'Conv2d Impolementation: {conv2d(X, W, p=(1,1), s=(1,1))}')
+print(f'SciPy Results: {scipy.signal.convolve2d(X, W, mode='same')}')
