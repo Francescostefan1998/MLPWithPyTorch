@@ -18,4 +18,4 @@ def conv1d(x, w, p=0, s=1):
 x = [1, 3, 2, 4, 5, 6, 1, 3]
 w = [1, 0, 3, 1, 2]
 print('Conv1d Implementation:', conv1d(x, w, p=2, s=1))
-print('NumPy Results:', np.convolve(x, w, mode='same'))
+print('NumPy Results:', np.convolve(x, w, mode='same')) 
