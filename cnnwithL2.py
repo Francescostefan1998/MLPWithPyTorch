@@ -13,6 +13,7 @@ loss_with_penalty = loss + l2_penalty
 ########## Binary Cross-entropy - used for binary classification
 logits = torch.tensor([0.8])
 probas = torch.sigmoid(logits) # applying the sigmoid to the logits
+# remember that the sigmoid squashed the value between 0 and 1 while the softmax into a probabilty distribution between the class labels
 target = torch.tensor([1.0])
 bce_loss_fn = nn.BCELoss()
 bce_logits_loss_fn = nn.BCEWithLogitsLoss()
