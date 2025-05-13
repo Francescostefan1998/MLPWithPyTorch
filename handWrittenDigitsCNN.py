@@ -89,3 +89,18 @@ ax.legend(fontsize=15)
 ax.set_xlabel('Epoch', size=15)
 ax.set_ylabel('Accuracy', size=15)
 plt.show()
+
+pred = model(mnist_test_dataset.data.unsqueeze(1) / 255.)
+is_correct = (torch.argmax(pred, dim=1) == mnist_test_dataset.targets).float()
+print(f'Test accuracy: {is_correct.mean():.4f}')
+fig = plt.figure(figsize=(12, 4))
+for i in range(12):
+    ax = fig.add_subplot(2, 6, i+1)
+    ax.set_xticks([]); ax.set_yticks([])
+    img = mnist_test_dataset[i][0][0, :, :]
+    pred = model(img.unsqueeze(0).unsqueeze(1))
+    y_pred = torch.argmax(pred)
+    ax.imshow(img, cmap='gray_r')
+    ax.text(0.9, 0.1, y_pred.item(), size=15, color='blue', hirizontalalignment='center', varticalalignment='center', transform=ax.transAxes)
+
+plt.show()
